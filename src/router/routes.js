@@ -1,5 +1,6 @@
 import login from "../components/Login.vue";
 import register from "../components/Register.vue";
+import home from "../components/Home.vue";
 
 const routes = [
     {
@@ -16,8 +17,17 @@ const routes = [
         name: 'Register',
         component: register,
         meta: {
-            requireAuth: false,
+            requireAuth: false, // false: không cần đăng nhập
             title: "Đăng ký"
+        }
+    },
+    {
+        path: "/home",
+        name: 'Home',
+        component: home,
+        meta: {
+            requireAuth: true, // true: yêu cầu đăng nhập mới vào được
+            title: "Home"
         }
     },
 ]

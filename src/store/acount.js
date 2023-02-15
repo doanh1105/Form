@@ -16,8 +16,12 @@ export const accountStore = defineStore('account', {
     },
 
     actions: {
-        addAcc(acount) {
-            this.acounts.push(Object.assign({acount}))
+        addAcc(account) {
+            this.acounts.push(Object.assign({...account}))
+        },
+        delAcc(index) {
+            this.acounts.splice(index, 1);
         },
     },
+    persist: true
 })

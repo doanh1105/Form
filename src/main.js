@@ -8,7 +8,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 
 import { createPinia } from 'pinia';
-const pinia = createPinia()
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
+const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
 createApp(App)
     .use(router)
